@@ -44,8 +44,11 @@
     }
 
     function copySpoilerMessage() {
+      var copy = document.getElementById('message');
+      copy.select();
+      copy.setSelectionRange(0,99999); // For mobile devices
+      navigator.clipboard.writeText(copy.value);
       document.getElementById('message').select();
-      document.execCommand('copy');
     }
   </script>
 </head>
